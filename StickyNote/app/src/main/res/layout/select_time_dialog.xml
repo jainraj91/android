@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/note_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:transitionName="selected_button">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_alarm" />
+
+
+    <innovate.jain.com.shakynote.font.CustomTextView
+        android:id="@+id/edit_time_button"
+        style="?android:borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:text="@string/time"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="100sp"
+        android:textStyle="normal" />
+
+    <Button
+        android:id="@+id/edit_date_button"
+        style="?android:borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_time_button"
+        android:layout_centerHorizontal="true"
+        android:text="@string/date"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp" />
+
+
+    <Button
+        android:id="@+id/ok"
+        style="?android:borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/edit_date_button"
+        android:text="@string/done"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:textStyle="italic" />
+
+
+</RelativeLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="innovate.jain.com.shakynote">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:icon="@drawable/stickyellow"
+        android:label="@string/app_name"
+        android:fullBackupContent="true"
+        android:allowBackup="true"
+        android:theme="@style/MyMaterialTheme">
+
+        <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIzWt-yMhfdHx8_ELd2-FPACB1h8DSgMCWX5ItWQ" />
+
+        <receiver android:name="innovate.jain.com.shakynote.receviers.RebootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="innovate.jain.com.shakynote.receviers.IncomingCallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="innovate.jain.com.shakynote.receviers.UnlockReceiver">
+            <intent-filter
+                android:enabled="true"
+                android:exported="false">
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="innovate.jain.com.shakynote.activity.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="innovate.jain.com.shakynote.activity.NoteActivity"
+            android:label="@string/title_activity_note"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity
+            android:name="innovate.jain.com.shakynote.activity.SettingsActivtiy"
+            android:label="@string/settings"
+            android:screenOrientation="portrait"></activity>
+
+        <service android:name="innovate.jain.com.shakynote.service.RenderingService" />
+        <service android:name="innovate.jain.com.shakynote.service.SensorListenerService" />
+
+        <receiver
+            android:name="innovate.jain.com.shakynote.receviers.AlarmReceiver"
+            android:process=":remote" />
+
+        <activity
+            android:name="innovate.jain.com.shakynote.activity.SplashActivity"
+            android:label="@string/title_activity_splash"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

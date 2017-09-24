@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="shake_open"
+        android:summary="Set if you want to open the note on shake"
+        android:title="Shake to open" />
+
+    <!--<CheckBoxPreference-->
+        <!--android:defaultValue="true"-->
+        <!--android:key="open_on_lock"-->
+        <!--android:summary="Set if you want to open it on lock screen"-->
+        <!--android:title="Show on lock Screen" />-->
+
+    <innovate.jain.com.shakynote.Preferences.SeekBarPreference
+        android:defaultValue="10"
+        android:dialogMessage="Set Intensity"
+        android:key="shake_intensity"
+        android:max="20"
+        android:summary="Set the intensity of shake and test it"
+        android:title="Set Shake Intensity" />
+</PreferenceScreen>
